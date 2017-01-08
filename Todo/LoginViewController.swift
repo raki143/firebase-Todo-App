@@ -22,7 +22,7 @@ class LoginViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        
+       
         super.viewDidAppear(animated)
         if let _ = FIRAuth.auth()?.currentUser {
             self.signIn()
@@ -64,6 +64,45 @@ class LoginViewController: UIViewController {
     }
     
     
+    @IBAction func requestResetPassword(_ sender: AnyObject) {
+        
+        let prompt = UIAlertController(title: "Reset Password", message: "Enter your email Id", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "ok", style: .default, handler: { (action) in
+            
+            let userInput = prompt.textFields![0].text
+            
+            guard let user = userInput, !user.isEmpty else{
+                return
+            }
+            
+            FIRAuth.auth()?.sendPasswordReset(withEmail: user, completion: { (error) in
+                if let error = error {
+                    if let errCode = FIRAuthErrorCode(rawValue: error._code) {
+                        switch errCode {
+                        case .errorCodeUserNotFound:
+                            DispatchQueue.main.async {
+                                self.showAlert("User account not found. Try registering")
+                            }
+                        default:
+                            DispatchQueue.main.async {
+                                self.showAlert("Error: \(error.localizedDescription)")
+                            }
+                        }
+                    }
+                    return
+                } else {
+                    DispatchQueue.main.async {
+                        self.showAlert("You'll receive an email shortly to reset your password.")
+                    }
+                }
+            })
+        })
+    
+        prompt.addTextField(configurationHandler: nil)
+        prompt.addAction(okAction)
+        present(prompt, animated: true, completion: nil)
+    }
+    
     func signIn(){
         emailField.text = ""
         passwordField.text = ""
@@ -73,7 +112,7 @@ class LoginViewController: UIViewController {
     func showAlert(_ message:String){
         
         let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
         
     }

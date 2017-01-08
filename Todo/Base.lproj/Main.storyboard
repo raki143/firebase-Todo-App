@@ -70,6 +70,9 @@
                                                 <state key="normal" title="Forgot Password">
                                                     <color key="titleColor" red="0.044340013374292074" green="0.11814017940075348" blue="0.29857650414336157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="requestResetPassword:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gUf-QQ-B03"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
