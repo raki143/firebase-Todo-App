@@ -7,7 +7,9 @@
 //
 
 import UIKit
+import Firebase
 import FirebaseAuth
+
 
 class SignupViewController: UIViewController {
 
@@ -25,9 +27,16 @@ class SignupViewController: UIViewController {
     
     @IBAction func didTapSignUp(_ sender: AnyObject) {
         
-        let email = emailTextField.text
-        let password = passwordTextField.text
-        FIRAuth.auth()?.createUser(withEmail: email!, password: password!, completion: {
+        guard let email = emailTextField.text, email != "" else {
+            showAlert("Please enter valid email address")
+            return
+        }
+        guard let password = passwordTextField.text, password != "" else {
+            showAlert("Please enter password")
+            return
+        }
+
+        FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: {
             (user, error) in
             if let error = error{
                 if let errCode = FIRAuthErrorCode(rawValue: error._code){
@@ -55,6 +64,8 @@ class SignupViewController: UIViewController {
     }
     
     func signIn(){
+        emailTextField.text = ""
+        passwordTextField.text = ""
         performSegue(withIdentifier: "loginFromSignUp", sender: nil)
     }
     

@@ -31,11 +31,14 @@
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6et-a8-Llt">
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dTM-bB-9Ms">
                                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="Sign In"/>
+                                                <connections>
+                                                    <action selector="didTapSignIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="x24-nU-tzk"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -86,6 +89,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="emailField" destination="9pw-AP-06d" id="WRE-5M-H00"/>
+                        <outlet property="passwordField" destination="6et-a8-Llt" id="M0D-fz-pAT"/>
                         <segue destination="jMq-p0-bzC" kind="show" identifier="loginFromSignIn" id="q2l-DW-IbJ"/>
                     </connections>
                 </viewController>
@@ -117,7 +122,7 @@
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WJx-I5-8oe">
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hkn-1V-PbB">
                                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -226,6 +231,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="6ZC-Zy-DUb"/>
+        <segue reference="q2l-DW-IbJ"/>
     </inferredMetricsTieBreakers>
 </document>
