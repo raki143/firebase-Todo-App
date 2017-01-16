@@ -17,7 +17,6 @@
 		7E0F0B281E066917004F7FAE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E0F0B261E066917004F7FAE /* LaunchScreen.storyboard */; };
 		7E0F0B301E0685E9004F7FAE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7E0F0B2F1E0685E9004F7FAE /* GoogleService-Info.plist */; };
 		7E0F0B321E06A561004F7FAE /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0F0B311E06A561004F7FAE /* SignupViewController.swift */; };
-		7E0F0B351E06BD5D004F7FAE /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0F0B341E06BD5D004F7FAE /* FirstViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,7 +35,6 @@
 		7E0F0B2F1E0685E9004F7FAE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7E0F0B311E06A561004F7FAE /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		7E0F0B331E06B5EC004F7FAE /* Todo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Todo.entitlements; sourceTree = "<group>"; };
-		7E0F0B341E06BD5D004F7FAE /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +79,6 @@
 				7E0F0B261E066917004F7FAE /* LaunchScreen.storyboard */,
 				7E0F0B291E066917004F7FAE /* Info.plist */,
 				7E0F0B311E06A561004F7FAE /* SignupViewController.swift */,
-				7E0F0B341E06BD5D004F7FAE /* FirstViewController.swift */,
 				1488213E1E2CD3DD00DB9355 /* ItemsTableViewController.swift */,
 				148821401E2CD5DA00DB9355 /* Item.swift */,
 			);
@@ -240,7 +237,6 @@
 				1488213F1E2CD3DD00DB9355 /* ItemsTableViewController.swift in Sources */,
 				7E0F0B1E1E066917004F7FAE /* AppDelegate.swift in Sources */,
 				148821411E2CD5DA00DB9355 /* Item.swift in Sources */,
-				7E0F0B351E06BD5D004F7FAE /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

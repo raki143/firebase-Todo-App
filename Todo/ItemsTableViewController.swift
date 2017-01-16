@@ -61,7 +61,7 @@ class ItemsTableViewController: UITableViewController {
         let firebaseAuth = FIRAuth.auth()
         do{
             try firebaseAuth?.signOut()
-            performSegue(withIdentifier: "SignOut", sender: nil)
+            dismiss(animated: true, completion: nil)
         }catch let signOutError as NSError{
             print("signout error : \(signOutError.localizedDescription) ")
         }

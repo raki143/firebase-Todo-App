@@ -231,9 +231,6 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="SignOut" id="nTA-vt-MUM"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VZy-N1-NAY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
