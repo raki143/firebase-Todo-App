@@ -236,6 +236,73 @@
             </objects>
             <point key="canvasLocation" x="1607" y="1021"/>
         </scene>
+        <!--Add Note View Controller-->
+        <scene sceneID="Nad-6J-9S7">
+            <objects>
+                <viewController storyboardIdentifier="AddNote" id="7wT-hT-Kez" customClass="AddNoteViewController" customModule="Todo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jhT-rp-lda"/>
+                        <viewControllerLayoutGuide type="bottom" id="rxX-vJ-tsM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5a1-10-Bc4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gug-bs-Mbq">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Add Note" id="H11-Nf-SQm"/>
+                                </items>
+                            </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zhl-gA-745">
+                                <rect key="frame" x="16" y="623" width="153" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelNote:" destination="7wT-hT-Kez" eventType="touchUpInside" id="OSW-tR-lCe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c9K-wV-3Ba">
+                                <rect key="frame" x="177" y="623" width="182" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveNote:" destination="7wT-hT-Kez" eventType="touchUpInside" id="3lI-AB-aFL"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="xYL-2c-KRv">
+                                <rect key="frame" x="0.0" y="64" width="375" height="551"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES" shipmentTrackingNumber="YES" flightNumber="YES" lookupSuggestion="YES"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Zhl-gA-745" firstAttribute="leading" secondItem="5a1-10-Bc4" secondAttribute="leadingMargin" id="D6P-6E-IrH"/>
+                            <constraint firstItem="c9K-wV-3Ba" firstAttribute="trailing" secondItem="5a1-10-Bc4" secondAttribute="trailingMargin" id="JbW-fT-h5V"/>
+                            <constraint firstAttribute="trailing" secondItem="Gug-bs-Mbq" secondAttribute="trailing" id="Mm2-sO-D8A"/>
+                            <constraint firstItem="Gug-bs-Mbq" firstAttribute="leading" secondItem="5a1-10-Bc4" secondAttribute="leading" id="PAY-Gw-mjt"/>
+                            <constraint firstItem="c9K-wV-3Ba" firstAttribute="leading" secondItem="Zhl-gA-745" secondAttribute="trailing" constant="8" symbolic="YES" id="WJ7-P5-2CE"/>
+                            <constraint firstItem="xYL-2c-KRv" firstAttribute="top" secondItem="Gug-bs-Mbq" secondAttribute="bottom" id="Wyv-fn-sqg"/>
+                            <constraint firstItem="Gug-bs-Mbq" firstAttribute="top" secondItem="jhT-rp-lda" secondAttribute="bottom" id="XWc-u0-mKC"/>
+                            <constraint firstAttribute="trailing" secondItem="xYL-2c-KRv" secondAttribute="trailing" id="hhD-s9-fKR"/>
+                            <constraint firstItem="c9K-wV-3Ba" firstAttribute="top" secondItem="xYL-2c-KRv" secondAttribute="bottom" constant="8" symbolic="YES" id="of7-le-mGg"/>
+                            <constraint firstItem="rxX-vJ-tsM" firstAttribute="top" secondItem="c9K-wV-3Ba" secondAttribute="bottom" constant="8" id="sZL-TN-zcw"/>
+                            <constraint firstItem="xYL-2c-KRv" firstAttribute="leading" secondItem="5a1-10-Bc4" secondAttribute="leading" id="tia-oW-RDG"/>
+                            <constraint firstItem="c9K-wV-3Ba" firstAttribute="width" secondItem="Zhl-gA-745" secondAttribute="width" constant="29" id="wxk-Fw-dF4"/>
+                            <constraint firstItem="rxX-vJ-tsM" firstAttribute="top" secondItem="Zhl-gA-745" secondAttribute="bottom" constant="8" id="x3N-6V-jYL"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="note" destination="xYL-2c-KRv" id="saR-aO-VpK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KFL-Gy-31o" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2514.4000000000001" y="1020.5397301349326"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="j3h-Gw-zF8">
             <objects>

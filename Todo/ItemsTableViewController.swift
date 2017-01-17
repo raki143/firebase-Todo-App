@@ -42,17 +42,9 @@ class ItemsTableViewController: UITableViewController {
     
     @IBAction func didTapAddItem(_ sender: Any) {
         
-        let prompt = UIAlertController(title: "To Do App", message: "To Do Item", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
-            let userInput = prompt.textFields![0].text
-            if (userInput!.isEmpty) {
-                return
-            }
-            self.ref.child("users").child(self.user.uid).child("items").childByAutoId().child("title").setValue(userInput)
-        }
-        prompt.addTextField(configurationHandler: nil)
-        prompt.addAction(okAction)
-        present(prompt, animated: true, completion: nil);
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let addNoteVC = storyboard.instantiateViewController(withIdentifier: "AddNote")
+        present(addNoteVC, animated: true, completion: nil)
     }
     
     
