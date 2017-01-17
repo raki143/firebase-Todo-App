@@ -80,7 +80,11 @@ class ItemsTableViewController: UITableViewController {
         return cell
     }
     
-
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let item = items[indexPath.row]
+        print(item.title!)
+    }
     
     
 
